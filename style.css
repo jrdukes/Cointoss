@@ -1,0 +1,198 @@
+/* Global modifiers */
+
+.center { text-align: center; }
+
+.bolder { font-weight: bolder; }
+
+.larger { font-size: xx-large; }
+
+.smaller { font-size: smaller; }
+
+.hidden { display: none !important; }
+
+.inline { display: inline; }
+
+.important { background-color: yellow; }
+
+.actionable {
+	cursor: pointer;
+	text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.currency, .date, .numeric { text-align: right; }
+
+.currency { width: 5.5rem !important; }
+
+.date { width: 7rem !important; }
+
+.numeric { width: 4rem !important; }
+
+.goal { color: #000; }
+
+.taskCurrent { color: #000; }
+
+.taskPending { color: #888; }
+
+.taskFuture { color: #ddd; }
+
+.event, .event a { color: #000; }
+
+.note, .note a { color: #000; }
+
+.message { color: #080; }
+
+.warning { color: #880; }
+
+.warning:before {
+	content: "Warning: ";
+	font-weight: bolder;
+}
+
+.error { color: #800; }
+
+.error:before {
+	content: "Error: ";
+	font-weight: bolder;
+}
+
+/* Element-specific modifiers */
+
+	body, h1, h2, p, input, select, textarea {
+		font: 0.75rem Verdana, Geneva, Arial, sans-serif;
+		letter-spacing: 0.06rem;
+	}
+
+	/* CSS OmniBar, for inline width and alignment placement.
+		Essentially it’s Bootstrap-lite. */
+	div.omnibar {
+		display: table;
+		width: 100%;
+	}
+	div.omnibar > div {
+		display: table-row;
+		width: 100%;
+	}
+	div.omnibar > div {
+		display: table-cell;
+	}
+	div.omnibar > div > * {
+		display: inline;
+		margin-bottom: 0;
+	}
+	div.omnibar > div.w3 {
+		width: 25%;
+	}
+	div.omnibar > div.w6 {
+		width: 50%;
+	}
+	div.omnibar > div.w9 {
+		width: 75%;
+	}
+	div.omnibar > div.w12 {
+		width: 100%;
+	}
+	div.omnibar > div.right {
+		text-align: right
+	}
+
+form button, form input, form select, form textarea
+	, h1, h2, p, table, .margin-bottom { margin: 0 auto 0.833333rem; }
+
+h1, h2 { font-weight: bolder; }
+
+input[type="text"], textarea {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+input[type="radio"] + label {
+	display: inline;
+	font-weight: normal;
+	margin-left: 0.25rem;
+}
+
+input[type="radio"] + label:after { content: ""; }
+
+label {
+	display: block;
+	font-weight: bolder;
+}
+
+label:after { content: ":"; }
+
+table { border-spacing: 0; }
+
+table.striped tbody tr:nth-of-type(even) { background-color: #eaeaed; }
+
+table thead tr:first-child th:first-child { border-top-left-radius: 8px; }
+
+table thead tr:first-child th:last-child { border-top-right-radius: 8px; }
+
+table tbody tr:last-child td:first-child { border-bottom-left-radius: 8px; }
+
+table tbody tr:last-child td:last-child { border-bottom-right-radius: 8px; }
+
+th, th a {
+	background: #42444e;
+	color: #fff;
+	font-weight: normal;
+	text-align: left;
+}
+
+table.calendar thead tr th { text-align: center; }
+
+table.calendar tbody tr td { 
+	border-color: #222;
+	text-align: right;
+}
+
+th, td { padding: 4px 8px; }
+
+td {
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+td.thisMonth { background-color: #ccf; }
+
+td.today { background-color: #ff3; }
+
+td:first-child { border-left: 1px solid #ccc; }
+
+table.accountsAndAmounts {display: inline; }
+
+table.accountsAndAmounts * {
+	margin-bottom: auto;
+}
+
+table.accountsAndAmounts tbody tr:last-child td:last-child { border-bottom-right-radius: 0; }
+table.accountsAndAmounts tbody tr:last-child td:first-child { border-bottom-left-radius: 0; }
+table.accountsAndAmounts tfoot tr:last-child th:first-child { border-bottom-left-radius: 8px; }
+table.accountsAndAmounts tfoot tr:last-child th:last-child { border-bottom-right-radius: 8px; }
+
+#txtNote { resize: none; }
+
+/* Media dependent modifiers */
+
+@media only screen and (min-width: 640px) {
+	form label {
+		display: inline-block;
+		margin-right: 0.5rem;
+		text-align: right;
+		vertical-align: top;
+		width: 6rem;
+	}
+
+	form input[type="text"], form textarea {
+		width: calc(100% - 6rem - 0.5rem);
+	}
+
+}
+
+/*@media only screen and (max-width: 800px) {
+	body, input, button, textarea, select {
+		font-size: 200%;
+	}
+
+}*/

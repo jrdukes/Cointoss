@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US" manifest="./cache.manifest">
+<head>
+	<title>Cointoss</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="robots" content="noindex">
+	<script src="Utilities.js" async></script>
+	<script src="Cointoss.js" async></script>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div id="divCalendar"></div>
+	<div id="divViewer">
+		<header class="margin-bottom"><h1 id="hViewerTitle"></h1></header>
+		<div class="omnibar margin-bottom"><div class="w12">
+			<label for="selView">View</label>
+			<select id="selView" onchange="showView();" accesskey="v"></select>
+			<span id="spnViewTitle"></span>
+		</div></div>
+		<div id="divViewerResults"></div>
+		<hr />
+		<div class='omnibar margin-bottom'>
+			<div class="w6">
+				<button onclick="createObject(1);">Create Account</button>
+				<button onclick="createObject(3);">Create Transaction</button>
+				<button onclick="createObject(2);">Create Repeating Transaction</button>
+			</div>
+			<div class="w6 right">
+				<button onclick="consolidateTransactions();">Consolidate Transactions Before:</button>
+				<button id="dtpTransactionsConsolidate" onclick="showCalendar(getDTPValue(this), this, '');"></button>
+			</div>
+		</div>
+	</div>
+	<form id="frmEditor" action="javascript:void(0);">
+		<div id="divIndexId" class="hidden"></div>
+		<div id="divDescription"><label for="txtDescription">Description</label><input type="text" id="txtDescription" spellcheck="true"/></div>
+		<div id="divDateTime"><label>DateTime</label><button id="dtpTransaction" onclick="showCalendar(getDTPValue(this), this, '');"></button></div>
+		<div id="divStatus"><label>Status</label>
+			<input type="radio" id="radStatus1" name="radStatus" value="1"><label for="radStatus1">1</label>
+			<input type="radio" id="radStatus2" name="radStatus" value="2"><label for="radStatus2">2</label>
+			<input type="radio" id="radStatus3" name="radStatus" value="3"><label for="radStatus3">3</label>
+		</div>
+		<div id="divRepeats"><label for="txtRepeats">Repeats (months)</label><input type="number" id="txtRepeats" class="numeric" min="1" /></div>
+		<div id="divAccountsAmounts"><label>Accounts, Amounts</label>
+			<table id="tblAccountsAmounts" class="accountsAndAmounts striped">
+				<thead>
+					<tr>
+						<th>Account</th>
+						<th class="currency">Amount</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr><th colspan="2" class="center"><button onclick="createAccountsAmounts();">Create New Account Amount</button></th></tr>
+				</tfoot>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+		<div id="divNote"></div>
+		<div id="divSaveData"></div>
+	</form>
+	<div id="divDataEditor" class="hidden"></div>
+	<div id="divSynchronizer">Sync</div>
+	<div id="divMessages">Message</div>
+
+</body>
+</html>
